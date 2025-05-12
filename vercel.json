@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install && node patch-jsx-runtime.js",
+  "framework": "create-react-app"
+}

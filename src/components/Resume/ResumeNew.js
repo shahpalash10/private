@@ -5,11 +5,13 @@ import Particle from "../Particle";
 import pdf from "../../Assets/Projects/shah_final.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
-// Set the worker source - using a local import for better compatibility with bundlers
-import { pdfjs as pdfJSWorker } from 'pdfjs-dist';
-pdfjs.GlobalWorkerOptions.workerSrc = pdfJSWorker.workerSrc;
+// Set up worker
+if (typeof window !== 'undefined' && 'Worker' in window) {
+  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+}
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
