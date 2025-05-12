@@ -1,0 +1,11 @@
+/* Cross-browser compatibility CSS */
+
+/* Fix for text-size-adjust warning */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Additional browser compatibility fixes can be added here */

@@ -2,28 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../Assets/Projects/shah_final.pdf";
+import pdf from "../../Assets/shah_final_complete.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import PDFFallback from "./PDFFallback";
 
-// Set up worker
-if (typeof window !== 'undefined' && 'Worker' in window) {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-}
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
+  const [pdfError, setPdfError] = useState(false);
 
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+  const handlePdfError = () => {
+    setPdfError(true);
+  };
 
   return (
     <div>
@@ -42,19 +36,25 @@ function ResumeNew() {
         </Row>
 
         <Row className="resume">
-          <Document 
-            file={pdf} 
-            className="d-flex justify-content-center"
-            onLoadSuccess={onDocumentLoadSuccess}
-          >
-            <Page 
-              pageNumber={1} 
-              scale={width > 786 ? 1.7 : 0.6} 
-            />
-          </Document>
+          {!pdfError ? (
+            <div className="d-flex justify-content-center">
+              <iframe 
+                src={pdf} 
+                width={width > 786 ? "800" : "350"}
+                height="1000"
+                title="Resume"
+                style={{border: "none"}}
+                onError={handlePdfError}
+              >
+                <PDFFallback pdfPath={pdf} />
+              </iframe>
+            </div>
+          ) : (
+            <PDFFallback pdfPath={pdf} />
+          )}
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
           <Button
             variant="primary"
             href={pdf}
