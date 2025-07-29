@@ -3,11 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import chats from "../../Assets/Projects/chat.png";
-import translates from "../../Assets/Projects/translate.jpg";
-import cpus from "../../Assets/Projects/cpu.jpg";
-import ship from "../../Assets/Projects/ships.jpg";
-import ocr from "../../Assets/Projects/OCR.png"
-import houses from "../../Assets/Projects/house.jpg"
+import applymate from "../../Assets/Projects/applymate.png";
+import flex from "../../Assets/Projects/flex.png";
+import link from "../../Assets/Projects/link.png";
+import lingoflow from "../../Assets/Projects/lingoflow.png";
+import agamotto from "../../Assets/Projects/agamotto.png";
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -22,56 +22,45 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={ship}
+              imgPath={lingoflow}
               isBlog={false}
-              title="Ships Recognition"
-              description="I've developed a ship recognition system using machine learning. By curating datasets, implementing preprocessing, and applying advanced algorithms, I achieve accurate vessel classification. This project holds potential in maritime security, autonomous navigation, and traffic management. I emphasize ethical data use and privacy throughout this endeavor"
-              ghLink="https://github.com/shahpalash10/Ships-detection-full-scale-model-"
-              
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={houses}
-              isBlog={false}
-              title="Houses Price Prediction Model"
-              description="This project is trained on you entering several generic components in a house from number of rooms to number of bathrooms and predicts the prices accordingly"
-              ghLink="https://github.com/shahpalash10/Houses_pricepredicition"
+              title="LingoFlow"
+              description="Personalized and secure Language translation Model using Python, JavaScript, HTML, Flask, Bootstrap, Git. Leveraged RNN's to create a LSTM model with encoding vectors, target sequencing and then using a decoder to produce the next character. Created a pipeline integration to a dedicated website access with Flask."
+              ghLink="https://github.com/djdiptayan1/LingoFlow"
               demoLink=""
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={ocr}
+              imgPath={agamotto}
               isBlog={false}
-              title="OCR"
-              description="OCR project, a powerful tool for extracting text from images. Through robust training and cutting-edge algorithms, I've created a reliable system that finds applications in digitization, data entry, and information retrieval. I prioritize usability and accessibility, making it an invaluable resource for diverse industries."
-              ghLink="https://github.com/shahpalash10/OCR"
+              title="Agamoto"
+              description="Deepfake Detection Model built with Python. Created a custom CNN on keras and successfully classified 6 types of deepfakes using MTCNN to first extract faces from videos and images and then leveraged Resnet to classify making it compatible to video and image files."
+              ghLink="https://github.com/djdiptayan1/Agamotto"
               demoLink=""              
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={translates}
+              imgPath={applymate}
               isBlog={false}
-              title="Language Translation Model"
-              description="Experience seamless cross-language communication with my Hindi to English speech-to-speech translation model. By leveraging advanced speech recognition and translation technologies, I've crafted a user-friendly solution for breaking language barriers. Whether for travel, business, or personal interactions, this model enables real-time, accurate, and accessible conversations between Hindi and English speakers."
-              ghLink="https://github.com/shahpalash10/English-to-Hindi-translator"
+              title="ApplyMate"
+              description="One Stop Solution For All Your Job Applications built with Typescript and JS. Developed an end-to-end software platform for job seekers, featuring AI-powered resume building, automated application submission, and personalized skill recommendations. Conducted a pilot with 100 students, achieving highly positive feedback."
+              ghLink="https://github.com/shahpalash10/ApplyMate"
               demoLink=""
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={cpus}
+              imgPath={link}
               isBlog={false}
-              title="CPU Load Monitor"
-              description="Experience real-time insights into your system's performance with my CPU load monitor project. This essential tool enables users to track and analyze CPU utilization, ensuring optimal resource management. With user-friendly graphical representations and detailed statistics, this project simplifies the monitoring process, making it an invaluable asset for system administrators, developers, and tech enthusiasts alike."
-              ghLink="https://github.com/shahpalash10/CPU_LOAD"
-             
+              title="LINK – Dating Through Your Instagram Network"
+              description="Reimagining Online Dating Through Trusted Social Connections using React.js, TypeScript, D3.js, Supabase, SQL. Building a dating platform that connects users through verified mutual Instagram connections, enhancing trust and meaningful engagement. Developed core services for social graph analysis, mutual connection scoring, real-time network visualizations, and secure authentication."
+              ghLink="https://link-nine-mu.vercel.app/"
+              demoLink=""
             />
           </Col>
 
@@ -83,6 +72,17 @@ function Projects() {
               description="Elevate your communication with my Java-based chat application. This feature-rich platform enables seamless messaging, group chats, file sharing, and more. With an intuitive user interface and robust security features, it ensures privacy and convenience. Whether for personal or professional use, this chat application enhances your connectivity, fostering efficient and engaging conversations.."
             
               ghLink="https://github.com/shahpalash10/ChatApplication"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={flex}
+              isBlog={false}
+              title="FLEX - Next-Gen Transport System"
+              description="Seamlessly navigate Chennai with real-time updates, smart routing, and integrated payment systems. Features include real-time tracking, smart payments, multi-modal routes, route finding, schedules, and transit pass functionality. Built to provide comprehensive transportation solutions for Chennai city."
+              ghLink="https://github.com/shahpalash10/FLEX"
+              demoLink=""
             />
           </Col>
         </Row>

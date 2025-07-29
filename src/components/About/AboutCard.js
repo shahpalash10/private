@@ -10,7 +10,7 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Palash Shah </span>
             from <span className="purple"> Hyderabad, India.</span>
-            <br /> I am a second year student pursuing a Btech Degree
+            <br /> I am a fourth year student pursuing a Btech Degree
             in Computer Science and Engineering at SRM University,Chennai.
             <br />
             I'm currently open for Internships
